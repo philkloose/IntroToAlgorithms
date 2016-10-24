@@ -32,6 +32,45 @@ public class Chapter2 {
         return 0;
     }
 
+    public static int[] BinaryAdd(int[] a, int[] b) {
+        int[] c = new int[a.Length + 1];
+        bool carry = false;
+
+        for (int i = a.Length; i > 0; i--) {
+            int currDigit = a[i-1] + b[i-1];
+            if (carry) {
+                if (currDigit == 0) {
+                    c[i] = 1;
+                    carry = false;
+                }
+                else if (currDigit == 1) {
+                    c[i] = 0;
+                    carry = true;
+                }
+                else if (currDigit == 2) {
+                    c[i] = 1;
+                    carry = true;
+                }
+            } else {
+                if  (currDigit == 0 ) {
+                    c[i] = 0;
+                    carry = false;
+                } else if (currDigit == 1) {
+                    c[i] = 1;
+                    carry = false;
+                } else if (currDigit == 2) {
+                    c[i] = 0;
+                    carry = true;
+                }
+            }
+        }
+        if (carry) {
+            c[0] = 1;
+        }
+
+        return c;
+    }
+
     public static void Exercise2_1_1() {
         int[] unsortedArray = {31,41,59,26,41,58};
 
@@ -45,5 +84,9 @@ public class Chapter2 {
 
     public static void Exercise2_1_4() {
         
+        int[] operand1 = {1,1,0,0}; // 12
+        int[] operand2 = {1,0,1,0}; // 10
+
+        Utilities.PrintArray(BinaryAdd(operand1, operand2));  // 22     
     }
 }

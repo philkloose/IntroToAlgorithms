@@ -7,8 +7,8 @@
 -debug:portable
 -nostdlib
 -nologo
-"c:\Code\Personal\IntroToAlgorithms\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
--out:"c:\Code\Personal\IntroToAlgorithms\bin\Debug\netcoreapp1.0\IntroToAlgorithms.dll"
+"C:\Code\Personal\IntroToAlgorithms\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
+-out:"C:\Code\Personal\IntroToAlgorithms\bin\Debug\netcoreapp1.0\IntroToAlgorithms.dll"
 -r:"C:\Users\pkluss\.nuget\packages\Microsoft.CSharp\4.0.1\ref\netstandard1.0\Microsoft.CSharp.dll"
 -r:"C:\Users\pkluss\.nuget\packages\Microsoft.VisualBasic\10.0.1\ref\netstandard1.1\Microsoft.VisualBasic.dll"
 -r:"C:\Users\pkluss\.nuget\packages\Microsoft.Win32.Primitives\4.0.1\ref\netstandard1.3\Microsoft.Win32.Primitives.dll"
@@ -82,6 +82,6 @@
 -r:"C:\Users\pkluss\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll"
 -r:"C:\Users\pkluss\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll"
 -r:"C:\Users\pkluss\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll"
-"c:\Code\Personal\IntroToAlgorithms\Chapter2.cs"
-"c:\Code\Personal\IntroToAlgorithms\Program.cs"
-"c:\Code\Personal\IntroToAlgorithms\Utilities.cs"
+"C:\Code\Personal\IntroToAlgorithms\Chapter2.cs"
+"C:\Code\Personal\IntroToAlgorithms\Program.cs"
+"C:\Code\Personal\IntroToAlgorithms\Utilities.cs"

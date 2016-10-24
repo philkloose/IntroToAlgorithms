@@ -6,7 +6,7 @@ namespace IntroToAlgorithms
     {
         public static void Main(string[] args)
         {
-            Chapter2.Exercise2_1_3();
+            Chapter2.Exercise2_1_4();
         }
     }
 }
