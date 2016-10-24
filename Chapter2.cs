@@ -34,37 +34,19 @@ public class Chapter2 {
 
     public static int[] BinaryAdd(int[] a, int[] b) {
         int[] c = new int[a.Length + 1];
-        bool carry = false;
+        int carry = 0;
 
         for (int i = a.Length; i > 0; i--) {
-            int currDigit = a[i-1] + b[i-1];
-            if (carry) {
-                if (currDigit == 0) {
-                    c[i] = 1;
-                    carry = false;
-                }
-                else if (currDigit == 1) {
-                    c[i] = 0;
-                    carry = true;
-                }
-                else if (currDigit == 2) {
-                    c[i] = 1;
-                    carry = true;
-                }
-            } else {
-                if  (currDigit == 0 ) {
-                    c[i] = 0;
-                    carry = false;
-                } else if (currDigit == 1) {
-                    c[i] = 1;
-                    carry = false;
-                } else if (currDigit == 2) {
-                    c[i] = 0;
-                    carry = true;
-                }
+            int digit = a[i-1] + b[i-1] + carry;
+
+            c[i] = digit % 2;
+            if (digit < 2) {
+                carry = 0;
+            } else if (digit >= 2) {
+                carry = 1;
             }
         }
-        if (carry) {
+        if (carry == 1) {
             c[0] = 1;
         }
 
