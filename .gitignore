@@ -18,6 +18,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # Visual Studio Project Files/Directories
+.vscode
 project.lock.json
 bin/Debug/
 obj/Debug/
