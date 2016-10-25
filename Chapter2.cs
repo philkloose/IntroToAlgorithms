@@ -3,11 +3,11 @@ using System;
 public class Chapter2 {
     public static int[] InsertionSort(int[] a) {
 
-        for (int j = 1; j <= a.Length - 1; j++)
+
+        for (int j = 2; j <= a.Length; j++)
         {
-            //Utilities.PrintArray(a);
-            int key = a[j];
-            int i = j - 1;
+            int key = a[(j - 1)];
+            int i = (j - 1) - 1;
             while (i >= 0 && a[i] > key) {
                 a[i + 1] = a[i];
                 i--;
@@ -15,11 +15,9 @@ public class Chapter2 {
             a[i + 1] = key;
         }
 
-        //Utilities.PrintArray(a);
-
         return a;
     }
-
+    
     public static int[] SelectionSort(int[] a) {
         
         for (int j = 0; j < a.Length - 1; j++) {
@@ -125,7 +123,7 @@ public class Chapter2 {
 
         Utilities.PrintArray(InsertionSort(unsortedArray));
     }
-    
+
     public static void Exercise2_1_3() {
         int[] unsortedArray = {31,41,59,26,41,58};
 
