@@ -20,6 +20,24 @@ public class Chapter2 {
         return a;
     }
 
+    public static int[] SelectionSort(int[] a) {
+        
+        for (int j = 0; j < a.Length - 1; j++) {
+            Utilities.PrintArray(a);
+            int key = a[j];
+            int lowPos = j;
+            for (int i = j + 1; i < a.Length; i++) {
+                if (a[i] < a[j] && a[i] < a[lowPos]) {
+                    lowPos = i;
+                }
+            }
+            a[j] = a[lowPos];
+            a[lowPos] = key;
+        }
+
+        return a;
+    }
+
     // Exercise 2.1-3
     public static int LinearSearch(int[] a, int v) {
         
@@ -70,5 +88,12 @@ public class Chapter2 {
         int[] operand2 = {1,0,1,0}; // 10
 
         Utilities.PrintArray(BinaryAdd(operand1, operand2));  // 22     
+    }
+
+    public static void Exercise2_2_2() {
+
+        int[] unsortedArray = Utilities.CreateUnsortedArray(10);
+
+        Utilities.PrintArray(SelectionSort(unsortedArray));
     }
 }
