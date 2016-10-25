@@ -10,7 +10,7 @@ public class Chapter2 {
             int i = j - 1;
             while (i >= 0 && a[i] > key) {
                 a[i + 1] = a[i];
-                i = i - 1;
+                i--;
             }
             a[i + 1] = key;
         }
@@ -38,7 +38,56 @@ public class Chapter2 {
         return a;
     }
 
-    // Exercise 2.1-3
+    public static int[] Merge(int[] a, int p, int q, int r) {
+        // a = array
+        // p = first element index
+        // q = last element of first half of array 'a'
+        // r = last element index
+
+        int n1 = q - p + 1; // length of left half array
+        int n2 = r - q; // length of right half array
+        int[] L = new int [n1 + 1];
+        int[] R = new int [n2 + 1];
+        int i;
+        int j;
+        for (i = 1; i <= n1; i++) {
+            L[i - 1] = a[p + (i - 1) - 1];
+        }
+        for (j = 1; j <= n2; j++) {
+            R[j - 1] = a[q + (j - 1)];
+        }
+        L[n1] = Int32.MaxValue;
+        R[n2] = Int32.MaxValue;
+        i = 1;
+        j = 1;
+        for (int k = p; k <= r; k++) {
+            if (L[i - 1] <= R[j - 1]) {
+                a[k - 1] = L[i - 1];
+                i++;
+            } else {
+                a[k - 1] = R[j - 1];
+                j++;
+            }
+        }
+
+        return a;
+    }
+
+    public static int[] MergeSort(int[] a, int p, int r) {
+        // a = array
+        // p = first element index
+        // r = last element index
+
+        if (p < r) {
+            int q = ((p + r) / 2); // last element of first half of array 'a'
+            MergeSort(a, p, q);
+            MergeSort(a, q + 1, r);
+            Merge(a, p, q, r);
+        }
+
+        return a;
+    }
+
     public static int LinearSearch(int[] a, int v) {
         
         for (int i = 0; i < a.Length; i++) {
@@ -76,6 +125,7 @@ public class Chapter2 {
 
         Utilities.PrintArray(InsertionSort(unsortedArray));
     }
+    
     public static void Exercise2_1_3() {
         int[] unsortedArray = {31,41,59,26,41,58};
 
@@ -95,5 +145,13 @@ public class Chapter2 {
         int[] unsortedArray = Utilities.CreateUnsortedArray(10);
 
         Utilities.PrintArray(SelectionSort(unsortedArray));
+    }
+
+    public static void Exercise2_3_1() {
+
+        int[] unsortedArray = Utilities.CreateUnsortedArray(10);
+
+        Utilities.PrintArray(unsortedArray);
+        Utilities.PrintArray(MergeSort(unsortedArray, 1, unsortedArray.Length));
     }
 }
