@@ -17,8 +17,12 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# VS Code
+# Visual Studio Project Files/Directories
 project.lock.json
+bin/Debug/
+obj/Debug/
+bin/Release/
+obj/Release/
 
 # =========================
 # Operating System Files
