@@ -91,21 +91,22 @@ public class Chapter2 {
         }
         i = 1;
         j = 1;
-        for (int k = p; k <= r; k++) {  // should be cleaned up
-            if (i <= L.Length && j <= R.Length) {
-                if (L[i - 1] <= R[j - 1]){
-                    a[k - 1] = L[i - 1];
-                    i++;
-                } else if (L[i - 1] > R[j - 1]) {
-                    a[k - 1] = R[j - 1];
-                    j++;
-                }
-            } else if (i > L.Length) {
+
+        for (int k = p; k <= r; k++) {
+            if (i > L.Length) {
                 a[k - 1] = R[j - 1];
                 j++;
             } else if (j > R.Length) {
                 a[k - 1] = L[i - 1];
                 i++;
+            } else {
+                if (L[i - 1] <= R[j - 1]) {
+                    a[k - 1] = L[i - 1];
+                    i++;
+                } else {
+                    a[k - 1] = R[j - 1];
+                    j++;
+                }
             }
         }
 
